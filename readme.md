@@ -291,6 +291,7 @@ The enhancement node uses a multi-stage processing pipeline:
 **Audio Enhancement Algorithm:** Based on DSRE v2.0 Enhanced Audio Processing Suite
 
 **Original DSRE:** Qu Le Fan
+
 **DSRE V2.0 Enhanced:** Urabewe
 
 **ComfyUI Integration:** Urabewe
