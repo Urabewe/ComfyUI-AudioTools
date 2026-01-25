@@ -543,9 +543,9 @@ class AudioEnhancementNode:
                     "step": 0.01,
                     "tooltip": "End time in seconds for processing region (0 = end of file)"
                 }),
-                "apply_to": (["full_track", "selection_only", "auto_enhance"], {
+                "apply_to": (["full_track", "selection_only", "v2v_mode"], {
                     "default": "full_track",
-                    "tooltip": "Full track: enhance entire audio | Selection only: enhance only the time range | Auto enhance: analyze reference before selection and enhance to match"
+                    "tooltip": "Full track: enhance entire audio | Selection only: enhance only the time range | V2V Mode: analyze reference before selection and enhance to match (for video-to-video workflows)"
                 })
             }
         }
@@ -673,9 +673,9 @@ class AudioEnhancementNode:
             end_sample = int(end_time * sample_rate)
             
             # -------------------------
-            # AUTO ENHANCE MODE (like auto_balance)
+            # V2V MODE (like auto_balance for video-to-video workflows)
             # -------------------------
-            if apply_to == "auto_enhance":
+            if apply_to == "v2v_mode":
                 # Get reference window before selection
                 window_samples = int(self.WINDOW_SEC * sample_rate)
                 ref_start = max(0, start_sample - window_samples)
@@ -789,7 +789,7 @@ class AudioEnhancementNode:
             )
             
             # Handle different apply modes
-            if apply_to in ["selection_only", "auto_enhance"]:
+            if apply_to in ["selection_only", "v2v_mode"]:
                 output_data = audio_data.copy()
                 
                 if target_sample_rate != "keep_original" and sample_rate != current_sr:
