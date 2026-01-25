@@ -28,7 +28,7 @@ These nodes are designed to work seamlessly in ComfyUI workflows, particularly f
 ### Install Dependencies
 
 ```bash
-pip install soundfile resampy
+pip install soundfile resampy librosa
 ```
 
 *Note: torch, numpy, scipy, and librosa are already included in standard ComfyUI installations.*
