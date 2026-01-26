@@ -31,8 +31,6 @@ These nodes are designed to work seamlessly in ComfyUI workflows, particularly f
 pip install soundfile resampy librosa
 ```
 
-*Note: torch, numpy, scipy, and librosa are already included in standard ComfyUI installations.*
-
 ### Manual Installation
 
 1. Navigate to your ComfyUI custom nodes directory:
